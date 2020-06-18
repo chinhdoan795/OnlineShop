@@ -30,22 +30,28 @@
     </div>
 </nav>
 
-    <center>
-        <form action="doAdd" method="POST" >
-            <fieldset style="background-color: #FFFFCC">
-                <legend>ADD NEW PRODUCT</legend>
-                Product Name: <input type="text" name="txtName" id="">
-                <br><br>
-                Category: <input type="text" name="txtCategory" id="">
-                <br><br>
-                Description: <input type="text" name="txtDescription" id="">
-                <br><br>
-                Price: <input type="text" name="txtPrice" id="">
-                <br><br>
-                <input type="submit" value="ADD">
-            </fieldset>
-        </form>
+<center>
+        <table style="background-color: #FFFFCC" border=1>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Category Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Menu</th>
+            </tr>
+            {{#each products}}
+            <tr>
+                <td>{{_id}}</td>
+                <td>{{name}}</td> 
+                <td>{{category}}</td>
+                <td>{{description}}</td>
+                <td>{{price}}</td>
+                <td><a href="/product/delete?id={{_id}}">Delete</a></Td>
+            </tr>
+            {{/each}}
+        </table>
     </center>
-
+    
 </body>
 </html>
