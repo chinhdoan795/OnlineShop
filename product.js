@@ -2,15 +2,15 @@ const express = require('express');
 var router = express.Router();
 
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb+srv://Test:12345@cluster0-9snej.mongodb.net/test';
+var url = 'mongodb+srv://Test:12345@clustertest-9snej.mongodb.net/test';
 
 
 router.get('/',async (req,res)=>{
     let client= await MongoClient.connect(url);
-    let dbo = client.db("MyDb");
+    let dbo = client.db("asm");
    
     let results = await dbo.collection("products").find({}).toArray();
-    res.render('allProducts',{customers:results});
+    res.render('allProducts',{products:results});
 })
 
 router.get('/add',(req,res)=>{
