@@ -2,8 +2,7 @@ const express = require('express');
 const engines = require('consolidate');
 const app = express();
 
-process.env.PORT || 5000
-
+var port = process.env.PORT || 5000
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -15,7 +14,7 @@ app.set('views','./views');
 app.set('view engine','hbs');
 
 var indexController = require('./index.js');
-app.use('/index',indexController);
+app.use('/',indexController);
 
 var productController = require('./product.js');
 app.use('/product',productController);
@@ -23,4 +22,4 @@ app.use('/product',productController);
 var userController = require('./user.js');
 app.use('/user',userController);
 
-app.listen(process.env.PORT || 5000);
+app.listen(port);
