@@ -14,5 +14,16 @@
     "express": "^4.17.1",
     "handlebars": "^4.7.6",
     "mongodb": "^3.5.9"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chinhdoan795/OnlineShop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chinhdoan795/OnlineShop/issues"
+  },
+  "homepage": "https://github.com/chinhdoan795/OnlineShop#readme"
+}
 }
