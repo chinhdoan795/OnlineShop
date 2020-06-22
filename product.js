@@ -24,7 +24,8 @@ router.post('/doAdd',async (req,res)=>{
     let categoryValue = req.body.txtCategory;
     let descriptionValue = req.body.txtDescription;
     let priceValue = req.body.txtPrice;
-    let newProduct = {name : nameValue, category : categoryValue, description : descriptionValue, price : priceValue};
+    let newProduct = {name : nameValue, category : categoryValue, 
+        description : descriptionValue, price : priceValue};
     await dbo.collection("products").insertOne(newProduct);
    
     let results = await dbo.collection("products").find({}).toArray();
